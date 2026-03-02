@@ -16,7 +16,6 @@
     --light:      #888888;
     --rule:       #dddddd;
     --bg-tint:    #f7f7f5;
-    --accent:     #1a1a1a;
     --max-width:  740px;
     --font-body:  'Georgia', 'Times New Roman', serif;
     --font-ui:    system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
@@ -30,6 +29,13 @@
     color: var(--dark);
     line-height: 1.7;
     padding: 0 20px;
+  }
+
+  /* ── GLOBAL IMAGE RULE ────────────────────────────────────── */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   /* ── LAYOUT WRAPPER ───────────────────────────────────────── */
@@ -79,9 +85,7 @@
     border-bottom: 1px solid var(--rule);
   }
 
-  section:last-of-type {
-    border-bottom: none;
-  }
+  section:last-of-type { border-bottom: none; }
 
   h2 {
     font-family: var(--font-ui);
@@ -113,7 +117,6 @@
     background: var(--bg-tint);
     border-left: 3px solid var(--black);
     padding: 24px 28px;
-    margin-bottom: 0;
   }
 
   .summary-box p {
@@ -124,27 +127,76 @@
 
   .summary-box p:last-child { margin-bottom: 0; }
 
-  /* ── PHOTOS ───────────────────────────────────────────────── */
+  /* ── TOP CONVERSION BLOCK ─────────────────────────────────── */
+  .conversion-block {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .conversion-block h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+  }
+
+  .conversion-block .conversion-note {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--mid);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .guidance-text {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    color: var(--light);
+    margin-top: 10px;
+    line-height: 1.55;
+  }
+
+  /* ── PHOTO GRID (3-up) ────────────────────────────────────── */
   .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 12px;
-    margin-top: 4px;
+    margin-top: 16px;
   }
 
-  .photo-grid figure {
-    margin: 0;
-  }
+  .photo-grid figure { margin: 0; }
 
   .photo-grid img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    display: block;
     filter: none;
   }
 
   .photo-grid figcaption {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: var(--light);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* ── NOTICE IMAGES (stacked, full-width) ──────────────────── */
+  .notice-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .notice-stack figure { margin: 0; }
+
+  .notice-stack img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+  }
+
+  .notice-stack figcaption {
     font-family: var(--font-ui);
     font-size: 0.72rem;
     color: var(--light);
@@ -175,7 +227,6 @@
     position: absolute;
     left: 0;
     color: var(--mid);
-    font-weight: 400;
   }
 
   /* ── COUNCILLORS ──────────────────────────────────────────── */
@@ -214,9 +265,7 @@
     transition: text-decoration-color 0.15s;
   }
 
-  .councillor-list a:hover {
-    text-decoration-color: var(--black);
-  }
+  .councillor-list a:hover { text-decoration-color: var(--black); }
 
   /* ── EMAIL BUTTON ─────────────────────────────────────────── */
   .btn-email {
@@ -331,10 +380,7 @@
     line-height: 1.6;
   }
 
-  footer strong {
-    color: var(--dark);
-    font-weight: 600;
-  }
+  footer strong { color: var(--dark); font-weight: 600; }
 
   /* ── RESPONSIVE ───────────────────────────────────────────── */
   @media (max-width: 480px) {
@@ -362,6 +408,14 @@
       <p>The council notice describes this as highway maintenance works.</p>
       <p>Residents are seeking clarification regarding consultation, assessment and the decision-making process prior to commencement of works.</p>
     </div>
+
+    <!-- Top conversion point -->
+    <div class="conversion-block">
+      <h3>Email Your Councillors</h3>
+      <p class="conversion-note">If you would like clarification regarding this scheme, you may contact your ward councillors directly.</p>
+      <a class="btn-email" href="mailto:cllr.p.allen@richmond.gov.uk;cllr.a.juriansz@richmond.gov.uk;cllr.l.obrien@richmond.gov.uk?subject=Fulwell%20Park%20Avenue%20Surface%20Material%20Change">Email Your Councillors</a>
+      <p class="guidance-text">A brief message asking when councillors were notified and whether residents were consulted is sufficient.</p>
+    </div>
   </section>
 
   <!-- ── 2. CURRENT SURFACE ─────────────────────────────────── -->
@@ -371,21 +425,38 @@
 
     <div class="photo-grid">
       <figure>
-        <img src="FulwellParkAve_Surface1.JPG" alt="Exposed aggregate concrete surface, Fulwell Park Avenue" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <img src="FulwellParkAve_Surface1.JPG" alt="Exposed aggregate concrete surface on Fulwell Park Avenue showing textured road finish" loading="lazy" onerror="this.closest('figure').style.display='none'">
         <figcaption>Existing surface — exposed aggregate concrete</figcaption>
       </figure>
       <figure>
-        <img src="FulwellParkAve_Surface2.JPG" alt="Exposed aggregate concrete surface detail" loading="lazy" onerror="this.closest('figure').style.display='none'">
-        <figcaption>Surface detail showing aggregate finish</figcaption>
+        <img src="FulwellParkAve_Surface2.JPG" alt="Fulwell Park Avenue road surface with white road markings on aggregate concrete" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Surface with road markings</figcaption>
       </figure>
       <figure>
-        <img src="FulwellParkAve_Surface3.JPG" alt="Close-up of aggregate concrete road surface" loading="lazy" onerror="this.closest('figure').style.display='none'">
-        <figcaption>Close-up of aggregate concrete surface</figcaption>
+        <img src="FulwellParkAve_Surface3.JPG" alt="Close-up macro photograph of the exposed aggregate concrete road surface texture" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Close-up of aggregate surface texture</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- ── 3. POINTS REQUIRING CLARIFICATION ─────────────────── -->
+  <!-- ── 3. COUNCIL NOTICE ──────────────────────────────────── -->
+  <section id="council-notice">
+    <h2>Council Notice</h2>
+    <p>The following notice was received by residents, dated 20 February 2026, advising of the proposed highway works.</p>
+
+    <div class="notice-stack">
+      <figure>
+        <img src="letterprt1.JPG" alt="Council notice page 1 — letter from London Borough of Richmond upon Thames dated 20 February 2026 regarding Fulwell Park Avenue resurfacing" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Council notice — page 1 of 2</figcaption>
+      </figure>
+      <figure>
+        <img src="letterprt2.JPG" alt="Council notice page 2 — continuation of resurfacing notice for Fulwell Park Avenue" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Council notice — page 2 of 2</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ── 4. POINTS REQUIRING CLARIFICATION ─────────────────── -->
   <section id="clarification">
     <h2>Points Requiring Clarification</h2>
     <p>The following questions have been raised by residents and have not yet received a response from the council or ward members.</p>
@@ -399,7 +470,7 @@
     </ul>
   </section>
 
-  <!-- ── 4. CONTACT YOUR WARD COUNCILLORS ───────────────────── -->
+  <!-- ── 5. CONTACT YOUR WARD COUNCILLORS ───────────────────── -->
   <section id="contact">
     <h2>Contact Your Ward Councillors</h2>
     <p>Ward councillors represent residents in decisions of this kind. Individual emails carry more weight than a collective letter.</p>
@@ -419,10 +490,8 @@
       </li>
     </ul>
 
-    <a class="btn-email" href="mailto:?subject=Fulwell%20Park%20Avenue%20Surface%20Material%20Change">
-      Email Your Councillors
-    </a>
-    <p class="btn-note">Opens your email client with the subject line pre-filled.<br>Please add each councillor's address individually for greater impact.</p>
+    <a class="btn-email" href="mailto:cllr.p.allen@richmond.gov.uk;cllr.a.juriansz@richmond.gov.uk;cllr.l.obrien@richmond.gov.uk?subject=Fulwell%20Park%20Avenue%20Surface%20Material%20Change">Email Your Councillors</a>
+    <p class="btn-note">Opens your email client with all three addresses and the subject line pre-filled.<br>Please email councillors individually where possible for greater impact.</p>
 
     <h3>Suggested Questions</h3>
     <ul class="question-list">
@@ -432,17 +501,31 @@
     </ul>
   </section>
 
-  <!-- ── 5. KEY DOCUMENTS ───────────────────────────────────── -->
+  <!-- ── 6. KEY DOCUMENTS ───────────────────────────────────── -->
   <section id="documents">
     <h2>Key Documents</h2>
     <ul class="doc-list">
       <li>
-        <span class="doc-icon">PDF</span>
-        <a href="#council-notice" id="council-notice">Council Notice – dated 20 February 2026</a>
+        <span class="doc-icon">IMG</span>
+        <a href="#council-notice">Council Notice – dated 20 February 2026 (see above)</a>
       </li>
       <li>
         <span class="doc-icon">IMG</span>
-        <span class="pending">Photographs of current surface – see above</span>
+        <a href="#surface">Photographs of current surface (see above)</a>
       </li>
       <li>
         <span class="doc-icon">REF</span>
+        <span class="pending">Highway maintenance scheme reference – pending</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <p>This page is intended to provide factual information for residents regarding the proposed surface material change on Fulwell Park Avenue.</p>
+    <p style="margin-top:10px;"><strong>Toni McQueen</strong> &nbsp;·&nbsp; 28 Fulwell Park Avenue &nbsp;·&nbsp; West Twickenham, Richmond upon Thames</p>
+  </footer>
+
+</div>
+</body>
+</html>
