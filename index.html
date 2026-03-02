@@ -204,6 +204,19 @@
     line-height: 1.4;
   }
 
+  /* ── ANCHOR LINK (inline) ─────────────────────────────────── */
+  .inline-anchor {
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s;
+  }
+
+  .inline-anchor:hover { text-decoration-color: var(--black); }
+
   /* ── BULLET LISTS ─────────────────────────────────────────── */
   ul.clarification-list {
     list-style: none;
@@ -227,6 +240,17 @@
     position: absolute;
     left: 0;
     color: var(--mid);
+  }
+
+  /* ── GOOGLE FORM EMBED ────────────────────────────────────── */
+  .form-embed {
+    margin-top: 20px;
+  }
+
+  .form-embed iframe {
+    width: 100%;
+    border: 1px solid var(--rule);
+    background: #ffffff;
   }
 
   /* ── COUNCILLORS ──────────────────────────────────────────── */
@@ -404,8 +428,8 @@
   <section id="summary">
     <h2>What Is Happening?</h2>
     <div class="summary-box">
-      <p>Fulwell Park Avenue's exposed aggregate concrete surface is scheduled to be replaced with tarmac from 10 March 2026.</p>
-      <p>The council notice describes this as highway maintenance works.</p>
+      <p>Fulwell Park Avenue&#8217;s exposed aggregate concrete surface is scheduled to be replaced with tarmac from 10 March 2026.</p>
+      <p>The council notice describes the scheme as &#8220;highway maintenance works&#8221; and as &#8220;road surface improvement works,&#8221; stating that &#8220;this upgrade&#8221; will replace the existing concrete finish with tarmac.</p>
       <p>Residents are seeking clarification regarding consultation, assessment and the decision-making process prior to commencement of works.</p>
     </div>
 
@@ -421,7 +445,8 @@
   <!-- ── 2. CURRENT SURFACE ─────────────────────────────────── -->
   <section id="surface">
     <h2>Current Surface</h2>
-    <p>The existing carriageway consists of an exposed aggregate concrete surface which has formed the established road finish for several decades.</p>
+    <!-- UPDATED: added "without issues such as significant potholes" -->
+    <p>The existing carriageway consists of an exposed aggregate concrete surface which has formed the established road finish for several decades, without issues such as significant potholes.</p>
 
     <div class="photo-grid">
       <figure>
@@ -442,9 +467,10 @@
   <!-- ── 3. COUNCIL NOTICE ──────────────────────────────────── -->
   <section id="council-notice">
     <h2>Council Notice</h2>
-    <p>The following notice was received by residents, dated 20 February 2026, advising of the proposed highway works.</p>
+    <!-- UPDATED: added anchor link to notice images -->
+    <p>The following notice was received by residents, dated 20 February 2026, advising of the proposed highway works. You may view the notice images directly below or <a class="inline-anchor" href="#council-notice-images">jump to them here</a>.</p>
 
-    <div class="notice-stack">
+    <div id="council-notice-images" class="notice-stack">
       <figure>
         <img src="letterprt1.JPG" alt="Council notice page 1 — letter from London Borough of Richmond upon Thames dated 20 February 2026 regarding Fulwell Park Avenue resurfacing" loading="lazy" onerror="this.closest('figure').style.display='none'">
         <figcaption>Council notice — page 1 of 2</figcaption>
@@ -470,7 +496,29 @@
     </ul>
   </section>
 
-  <!-- ── 5. CONTACT YOUR WARD COUNCILLORS ───────────────────── -->
+  <!-- ── 5. RESIDENT POLL ───────────────────────────────────── -->
+  <section id="resident-poll">
+    <h2>Resident Poll</h2>
+    <p>Residents are invited to indicate whether they received any consultation prior to the notice dated 20 February 2026.</p>
+
+    <div class="form-embed">
+      <!-- Replace the src URL below with your Google Form embed link -->
+      <!-- Get it from: Google Forms → Send → <> Embed → copy the src URL only -->
+      <iframe
+        src="PASTE_GOOGLE_FORM_EMBED_URL_HERE"
+        width="100%"
+        height="800"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading&hellip;
+      </iframe>
+    </div>
+
+    <p class="btn-note">This poll is administered via Google Forms. Responses are anonymous unless you choose to provide identifying information.</p>
+  </section>
+
+  <!-- ── 6. CONTACT YOUR WARD COUNCILLORS ───────────────────── -->
   <section id="contact">
     <h2>Contact Your Ward Councillors</h2>
     <p>Ward councillors represent residents in decisions of this kind. Individual emails carry more weight than a collective letter.</p>
@@ -485,7 +533,7 @@
         <a href="mailto:cllr.a.juriansz@richmond.gov.uk">cllr.a.juriansz@richmond.gov.uk</a>
       </li>
       <li>
-        <span class="councillor-name">Cllr Laura O'Brien</span>
+        <span class="councillor-name">Cllr Laura O&#8217;Brien</span>
         <a href="mailto:cllr.l.obrien@richmond.gov.uk">cllr.l.obrien@richmond.gov.uk</a>
       </li>
     </ul>
@@ -501,13 +549,31 @@
     </ul>
   </section>
 
-  <!-- ── 6. KEY DOCUMENTS ───────────────────────────────────── -->
+  <!-- ── 7. KEY DOCUMENTS ───────────────────────────────────── -->
   <section id="documents">
     <h2>Key Documents</h2>
     <ul class="doc-list">
       <li>
         <span class="doc-icon">IMG</span>
-        <a href="#council-notice">Council Notice – dated 20 February 2026 (see above)</a>
+        <a href="#council-notice-images">Council Notice – dated 20 February 2026 (see above)</a>
       </li>
       <li>
-      
+        <span class="doc-icon">IMG</span>
+        <a href="#surface">Photographs of current surface (see above)</a>
+      </li>
+      <li>
+        <span class="doc-icon">REF</span>
+        <span class="pending">Highway maintenance scheme reference – pending</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <p>This page is intended to provide factual information for residents regarding the proposed surface material change on Fulwell Park Avenue.</p>
+    <p style="margin-top:10px;"><strong>Toni McQueen</strong> &nbsp;·&nbsp; 28 Fulwell Park Avenue &nbsp;·&nbsp; West Twickenham, Richmond upon Thames</p>
+  </footer>
+
+</div>
+</body>
+</html>
