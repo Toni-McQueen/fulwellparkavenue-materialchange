@@ -1,84 +1,462 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Fulwell Park Avenue Material Change 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fulwell Park Avenue – Surface Material Change 2026</title>
 <style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 40px;
+
+  /* ── RESET & BASE ─────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:      #111111;
+    --dark:       #222222;
+    --mid:        #555555;
+    --light:      #888888;
+    --rule:       #dddddd;
+    --bg-tint:    #f7f7f5;
+    --accent:     #1a1a1a;
+    --max-width:  740px;
+    --font-body:  'Georgia', 'Times New Roman', serif;
+    --font-ui:    system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  html { font-size: 17px; }
+
+  body {
+    font-family: var(--font-body);
+    background: #ffffff;
+    color: var(--dark);
+    line-height: 1.7;
+    padding: 0 20px;
+  }
+
+  /* ── LAYOUT WRAPPER ───────────────────────────────────────── */
+  .page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 48px 0 80px;
+  }
+
+  /* ── MASTHEAD ─────────────────────────────────────────────── */
+  .masthead {
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+
+  .masthead .location-tag {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: var(--font-body);
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--black);
+    letter-spacing: -0.01em;
+  }
+
+  .masthead .date-notice {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--mid);
+    margin-top: 10px;
+  }
+
+  /* ── SECTION STRUCTURE ────────────────────────────────────── */
+  section {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+  }
+
+  h2 {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 24px 0 8px;
+  }
+
+  p {
+    margin-bottom: 14px;
+    color: var(--dark);
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* ── SUMMARY BOX ──────────────────────────────────────────── */
+  .summary-box {
+    background: var(--bg-tint);
+    border-left: 3px solid var(--black);
+    padding: 24px 28px;
+    margin-bottom: 0;
+  }
+
+  .summary-box p {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .summary-box p:last-child { margin-bottom: 0; }
+
+  /* ── PHOTOS ───────────────────────────────────────────────── */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .photo-grid figure {
+    margin: 0;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+  }
+
+  .photo-grid figcaption {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: var(--light);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* ── BULLET LISTS ─────────────────────────────────────────── */
+  ul.clarification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul.clarification-list li {
+    padding: 10px 0 10px 20px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    font-size: 0.97rem;
+    color: var(--dark);
+    line-height: 1.55;
+  }
+
+  ul.clarification-list li:first-child { border-top: 1px solid var(--rule); }
+
+  ul.clarification-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--mid);
+    font-weight: 400;
+  }
+
+  /* ── COUNCILLORS ──────────────────────────────────────────── */
+  .councillor-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+  }
+
+  .councillor-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 16px;
+  }
+
+  .councillor-list li:first-child { border-top: 1px solid var(--rule); }
+
+  .councillor-name {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--black);
+    min-width: 160px;
+  }
+
+  .councillor-list a {
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s;
+  }
+
+  .councillor-list a:hover {
+    text-decoration-color: var(--black);
+  }
+
+  /* ── EMAIL BUTTON ─────────────────────────────────────────── */
+  .btn-email {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    background: var(--black);
+    text-decoration: none;
+    padding: 13px 28px;
+    margin-top: 4px;
+    transition: background 0.15s;
+  }
+
+  .btn-email:hover { background: #333333; }
+
+  .btn-note {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--light);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* ── SUGGESTED QUESTIONS ──────────────────────────────────── */
+  .question-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .question-list li {
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    color: var(--dark);
+    padding: 8px 0 8px 18px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .question-list li:first-child { border-top: 1px solid var(--rule); }
+
+  .question-list li::before {
+    content: '?';
+    position: absolute;
+    left: 0;
+    color: var(--mid);
+    font-size: 0.75rem;
+    top: 10px;
+  }
+
+  /* ── DOCUMENTS ────────────────────────────────────────────── */
+  .doc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .doc-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .doc-list li:first-child { border-top: 1px solid var(--rule); }
+
+  .doc-icon {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--mid);
+    background: var(--bg-tint);
+    border: 1px solid var(--rule);
+    padding: 3px 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .doc-list a {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 3px;
+  }
+
+  .doc-list a:hover { text-decoration-color: var(--black); }
+
+  .doc-list .pending {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--light);
+    font-style: italic;
+  }
+
+  /* ── FOOTER ───────────────────────────────────────────────── */
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 2px solid var(--black);
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    color: var(--mid);
     line-height: 1.6;
-    background-color: #ffffff;
-    color: #222;
-}
-h1 {
-    font-size: 28px;
-}
-h2 {
-    margin-top: 30px;
-}
-.section {
-    margin-top: 25px;
-}
-.box {
-    background-color: #f4f4f4;
-    padding: 15px;
-    margin-top: 20px;
-}
-a {
-    color: #004080;
-}
+  }
+
+  footer strong {
+    color: var(--dark);
+    font-weight: 600;
+  }
+
+  /* ── RESPONSIVE ───────────────────────────────────────────── */
+  @media (max-width: 480px) {
+    .photo-grid { grid-template-columns: 1fr 1fr; }
+    .councillor-list li { flex-direction: column; gap: 2px; }
+  }
+
 </style>
 </head>
 <body>
+<div class="page">
 
-<h1>Fulwell Park Avenue Surface Material Change 2026</h1>
+  <!-- ── MASTHEAD ───────────────────────────────────────────── -->
+  <header class="masthead">
+    <p class="location-tag">London Borough of Richmond upon Thames &nbsp;·&nbsp; Fulwell &amp; Hampton Hill Ward</p>
+    <h1>Fulwell Park Avenue<br>Surface Material Change 2026</h1>
+    <p class="date-notice">Council notice dated 20 February 2026 &nbsp;·&nbsp; Works scheduled from 10 March 2026</p>
+  </header>
 
-<p>
-Residents received a letter dated 20 February 2026 advising that the long established exposed aggregate concrete surface on Fulwell Park Avenue is scheduled to be replaced with tarmac.
-Works are due to commence on 10 March 2026.
-</p>
+  <!-- ── 1. WHAT IS HAPPENING ───────────────────────────────── -->
+  <section id="summary">
+    <h2>What Is Happening?</h2>
+    <div class="summary-box">
+      <p>Fulwell Park Avenue's exposed aggregate concrete surface is scheduled to be replaced with tarmac from 10 March 2026.</p>
+      <p>The council notice describes this as highway maintenance works.</p>
+      <p>Residents are seeking clarification regarding consultation, assessment and decision-making prior to commencement.</p>
+    </div>
+  </section>
 
-<div class="section">
-<h2>Current Surface</h2>
-<p>
-The existing carriageway consists of an exposed aggregate concrete surface which has formed the established road finish for several decades.
-</p>
+  <!-- ── 2. CURRENT SURFACE ─────────────────────────────────── -->
+  <section id="surface">
+    <h2>Current Surface</h2>
+    <p>The existing carriageway consists of an exposed aggregate concrete surface which has formed the established road finish for several decades.</p>
+
+    <div class="photo-grid">
+      <figure>
+        <img src="FulwellParkAve_Surface1.JPG" alt="Exposed aggregate concrete surface, Fulwell Park Avenue" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Existing surface — exposed aggregate concrete</figcaption>
+      </figure>
+      <figure>
+        <img src="FulwellParkAve_Surface2.JPG" alt="Exposed aggregate concrete surface detail" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Surface detail showing aggregate finish</figcaption>
+      </figure>
+      <figure>
+        <img src="FulwellParkAve_Surface3.JPG" alt="Close-up of aggregate concrete road surface" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Close-up of aggregate concrete surface</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ── 3. POINTS REQUIRING CLARIFICATION ─────────────────── -->
+  <section id="clarification">
+    <h2>Points Requiring Clarification</h2>
+    <p>The following questions have been raised by residents and have not yet received a response from the council or ward members.</p>
+    <ul class="clarification-list">
+      <li>When ward councillors were notified of this scheme</li>
+      <li>Whether residents were consulted regarding replacement of the long-established surface with an alternative material</li>
+      <li>Whether any assessment has been undertaken regarding interaction between roadside tree roots and the proposed surface material</li>
+      <li>Whether commencement can be paused pending clarification</li>
+      <li>Under what delegated authority the decision to proceed was approved</li>
+    </ul>
+  </section>
+
+  <!-- ── 4. CONTACT YOUR WARD COUNCILLORS ───────────────────── -->
+  <section id="contact">
+    <h2>Contact Your Ward Councillors</h2>
+    <p>Ward councillors represent residents in decisions of this kind. Individual emails carry more weight than a collective letter.</p>
+
+    <ul class="councillor-list">
+      <li>
+        <span class="councillor-name">Cllr Piers Allen</span>
+        <a href="mailto:cllr.p.allen@richmond.gov.uk">cllr.p.allen@richmond.gov.uk</a>
+      </li>
+      <li>
+        <span class="councillor-name">Cllr Alan Juriansz</span>
+        <a href="mailto:cllr.a.juriansz@richmond.gov.uk">cllr.a.juriansz@richmond.gov.uk</a>
+      </li>
+      <li>
+        <span class="councillor-name">Cllr Laura O'Brien</span>
+        <a href="mailto:cllr.l.obrien@richmond.gov.uk">cllr.l.obrien@richmond.gov.uk</a>
+      </li>
+    </ul>
+
+    <a class="btn-email"
+       href="mailto:cllr.p.allen@richmond.gov.uk,cllr.a.juriansz@richmond.gov.uk,cllr.l.obrien@richmond.gov.uk?subject=Fulwell%20Park%20Avenue%20Surface%20Material%20Change">
+      Email Your Councillors
+    </a>
+    <p class="btn-note">Opens your email client with all three addresses and the subject line pre-filled.<br>Please email councillors individually where possible for greater impact.</p>
+
+    <h3>Suggested Questions</h3>
+    <ul class="question-list">
+      <li>When were ward members notified of this scheme?</li>
+      <li>Were residents consulted regarding the replacement of the exposed aggregate concrete surface?</li>
+      <li>Under what delegated authority was this decision approved?</li>
+    </ul>
+  </section>
+
+  <!-- ── 5. KEY DOCUMENTS ───────────────────────────────────── -->
+  <section id="documents">
+    <h2>Key Documents</h2>
+    <ul class="doc-list">
+      <li>
+        <span class="doc-icon">PDF</span>
+        <a href="#council-notice" id="council-notice">Council Notice – dated 20 February 2026</a>
+      </li>
+      <li>
+        <span class="doc-icon">IMG</span>
+        <span class="pending">Photographs of current surface – see above</span>
+      </li>
+      <li>
+        <span class="doc-icon">REF</span>
+        <span class="pending">Highway maintenance scheme reference – pending</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <p>This page is intended to provide factual information for residents regarding the proposed surface material change on Fulwell Park Avenue.</p>
+    <p style="margin-top:10px;"><strong>Toni McQueen</strong> &nbsp;·&nbsp; 28 Fulwell Park Avenue &nbsp;·&nbsp; Fulwell, Richmond upon Thames</p>
+  </footer>
+
 </div>
-
-<div class="section">
-<h2>Points Residents May Wish to Clarify</h2>
-<ul>
-<li>When ward councillors were notified of the scheme</li>
-<li>Whether residents were consulted regarding replacement of the long established surface with an alternative material</li>
-<li>Whether any assessment has been undertaken regarding interaction between roadside tree roots and the proposed surface material</li>
-<li>Whether commencement can be paused pending clarification</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Ward Councillors West Twickenham</h2>
-<p>
-Cllr Piers Allen<br>
-<a href="mailto:cllr.p.allen@richmond.gov.uk">cllr.p.allen@richmond.gov.uk</a><br><br>
-
-Cllr Alan Juriansz<br>
-<a href="mailto:cllr.a.juriansz@richmond.gov.uk">cllr.a.juriansz@richmond.gov.uk</a><br><br>
-
-Cllr Laura O'Brien<br>
-<a href="mailto:cllr.l.obrien@richmond.gov.uk">cllr.l.obrien@richmond.gov.uk</a>
-</p>
-</div>
-
-<div class="box">
-<p>
-This page is intended to provide factual information for residents regarding the proposed surface material change.
-</p>
-<p>
-Toni McQueen<br>
-28 Fulwell Park Avenue
-</p>
-</div>
-
 </body>
 </html>
