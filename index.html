@@ -113,6 +113,39 @@
     .councillor-list li { flex-direction: column; gap: 2px; }
   }
 
+
+  /* ── EMAIL TEMPLATE ──────────────────────────────────────── */
+  .email-template {
+    background: var(--bg-tint);
+    border: 1px solid var(--rule);
+    padding: 18px;
+    margin-top: 16px;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+  }
+
+  /* ── COMPARISON TABLE ────────────────────────────────────── */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    border-bottom: 1px solid var(--rule);
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .comparison-table th {
+    font-weight: 600;
+    color: var(--black);
+  }
 </style>
 </head>
 <body>
@@ -135,6 +168,8 @@
       <li><a href="#resident-poll">Resident Poll</a></li>
       <li><a href="#site-video">Video of Existing Surface Condition</a></li>
       <li><a href="#contact">Contact Your Ward Councillors</a></li>
+      <li><a href="#email-template">Email Template</a></li>
+      <li><a href="#surface-information">Surface Material Information</a></li>
       <li><a href="#documents">Key Documents</a></li>
     </ul>
   </section>
@@ -167,22 +202,6 @@
         <source src="fulwell-roll-final.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-    </div>
-
-    <!-- Photo grid remains here -->
-    <div class="photo-grid">
-      <figure>
-        <img src="FulwellParkAve_Surface1.JPG" alt="Exposed aggregate concrete surface on Fulwell Park Avenue showing textured road finish" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
-        <figcaption>Existing surface — exposed aggregate concrete</figcaption>
-      </figure>
-      <figure>
-        <img src="FulwellParkAve_Surface2.JPG" alt="Fulwell Park Avenue road surface with white road markings on aggregate concrete" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
-        <figcaption>Surface with road markings</figcaption>
-      </figure>
-      <figure>
-        <img src="FulwellParkAve_Surface3.JPG" alt="Close-up macro photograph of the exposed aggregate concrete road surface texture" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
-        <figcaption>Close-up of aggregate surface texture</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -271,12 +290,77 @@
     </ul>
   </section>
 
+  <!-- ── EMAIL TEMPLATE ───────────────────────────────────── -->
+  <section id="email-template">
+    <h2>Email Template</h2>
+    <p>Some residents have asked what to write when contacting councillors. The following template can be copied and edited if helpful.</p>
+    <pre class="email-template">Subject: Fulwell Park Avenue surface material change
+
+Dear Councillor,
+
+I am a local resident seeking clarification regarding the proposed
+replacement of the exposed aggregate concrete surface on Fulwell Park Avenue.
+
+Could you please clarify:
+
+&#8226; When ward members were first notified of this scheme
+&#8226; Whether residents were consulted prior to the decision
+&#8226; What condition assessment determined that full resurfacing is required
+
+Given that works are scheduled to begin shortly, I would appreciate any
+information regarding the decision-making process prior to commencement.
+
+Kind regards
+[Name]</pre>
+    <p class="btn-note">Providing a starter template often helps residents contact councillors more easily, as it removes uncertainty about what to write.</p>
+  </section>
+
+  <!-- ── SURFACE MATERIAL INFORMATION ─────────────────────── -->
+  <section id="surface-information">
+    <h2>Surface Material Information</h2>
+    <p>Exposed aggregate concrete is a paving technique where the top layer of cement paste is removed to reveal the underlying stones (aggregate). This method is commonly used in driveways, pathways, and public road surfaces.</p>
+    <p>The technique involves pouring concrete and, while curing, either applying a surface retarder or washing away the top 2&#8211;6mm of cement paste to expose the decorative stone layer beneath.</p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Exposed Aggregate Concrete</th>
+          <th>Tarmac (Asphalt)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Highly durable structural surface once installed</td>
+          <td>Typically requires resurfacing more frequently</td>
+        </tr>
+        <tr>
+          <td>Aggregate texture provides natural traction and non-slip properties</td>
+          <td>Smoother surface relying on aggregate embedded in asphalt</td>
+        </tr>
+        <tr>
+          <td>Resistant to wear from traffic and environmental conditions such as freezing and thawing</td>
+          <td>More susceptible to deformation and rutting under repeated loads</td>
+        </tr>
+        <tr>
+          <td>Often low maintenance once installed, requiring only periodic cleaning or resealing</td>
+          <td>Maintenance generally involves patching, resurfacing, and periodic replacement</td>
+        </tr>
+        <tr>
+          <td>Distinctive textured appearance using decorative stone such as pebbles, granite, or river rock</td>
+          <td>Uniform dark road surface commonly used across road networks</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="btn-note">Sources: Google search summaries and general descriptions of exposed aggregate concrete and road construction terminology (including Wikipedia references).</p>
+  </section>
+
   <!-- ── 8. KEY DOCUMENTS ───────────────────────────────────── -->
   <section id="documents">
     <h2>Key Documents</h2>
     <ul class="doc-list">
       <li>
-        <span class="doc-icon">PDF</span>
+        <span class="doc-icon">PDF</</span>
         <a href="Fulwell-Park-Avenue-Council-Notice-20-Feb-2026.pdf" target="_blank" rel="noopener noreferrer">Council Notice – dated 20 February 2026</a>
       </li>
       <li>
