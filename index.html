@@ -23,13 +23,7 @@
 
   html { font-size: 17px; }
 
-  body {
-    font-family: var(--font-body);
-    background: #ffffff;
-    color: var(--dark);
-    line-height: 1.7;
-    padding: 0 20px;
-  }
+  body { font-family: var(--font-body); background: #ffffff; color: var(--dark); line-height: 1.7; padding: 0 20px; }
 
   img { max-width: 100%; height: auto; display: block; }
 
@@ -57,7 +51,6 @@
   .conversion-block .conversion-note { font-family: var(--font-ui); font-size: 0.85rem; color: var(--mid); margin-bottom: 16px; line-height: 1.5; }
   .guidance-text { font-family: var(--font-ui); font-size: 0.78rem; color: var(--light); margin-top: 10px; line-height: 1.55; }
 
-  /* Surface video */
   .surface-video { margin-top: 20px; margin-bottom: 20px; }
   .surface-video video { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
 
@@ -66,7 +59,6 @@
   .photo-grid img { width: 100%; height: 180px; object-fit: cover; filter: none; }
   .photo-grid figcaption { font-family: var(--font-ui); font-size: 0.72rem; color: var(--light); margin-top: 6px; line-height: 1.4; }
 
-  /* Notice stack — PDF embed */
   .notice-stack { margin-top: 16px; }
   .notice-stack iframe { display: block; width: 100%; }
   .notice-caption { font-family: var(--font-ui); font-size: 0.72rem; color: var(--light); margin-top: 6px; line-height: 1.4; }
@@ -113,39 +105,14 @@
     .councillor-list li { flex-direction: column; gap: 2px; }
   }
 
-
   /* ── EMAIL TEMPLATE ──────────────────────────────────────── */
-  .email-template {
-    background: var(--bg-tint);
-    border: 1px solid var(--rule);
-    padding: 18px;
-    margin-top: 16px;
-    font-family: var(--font-ui);
-    font-size: 0.85rem;
-    white-space: pre-wrap;
-  }
+  .email-template { background: var(--bg-tint); border: 1px solid var(--rule); padding: 18px; margin-top: 16px; font-family: var(--font-ui); font-size: 0.85rem; white-space: pre-wrap; }
 
   /* ── COMPARISON TABLE ────────────────────────────────────── */
-  .comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 16px;
-    font-family: var(--font-ui);
-    font-size: 0.9rem;
-  }
+  .comparison-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-family: var(--font-ui); font-size: 0.9rem; }
+  .comparison-table th, .comparison-table td { border-bottom: 1px solid var(--rule); padding: 10px; text-align: left; vertical-align: top; }
+  .comparison-table th { font-weight: 600; color: var(--black); }
 
-  .comparison-table th,
-  .comparison-table td {
-    border-bottom: 1px solid var(--rule);
-    padding: 10px;
-    text-align: left;
-    vertical-align: top;
-  }
-
-  .comparison-table th {
-    font-weight: 600;
-    color: var(--black);
-  }
 </style>
 </head>
 <body>
@@ -170,6 +137,7 @@
       <li><a href="#contact">Contact Your Ward Councillors</a></li>
       <li><a href="#email-template">Email Template</a></li>
       <li><a href="#surface-information">Surface Material Information</a></li>
+      <li><a href="#replacement-questions">Questions Regarding the Proposed Replacement</a></li>
       <li><a href="#documents">Key Documents</a></li>
     </ul>
   </section>
@@ -184,7 +152,6 @@
     </div>
     <div class="conversion-block">
       <h3>Email Your Councillors</h3>
-      <!-- UPDATED: extended conversion-note wording -->
       <p class="conversion-note">If you would like clarification regarding this scheme&#8217;s assessment and decision making prior to commencement, you may contact your ward councillors directly.</p>
       <a class="btn-email" href="mailto:cllr.p.allen@richmond.gov.uk,cllr.a.juriansz@richmond.gov.uk,cllr.l.obrien@richmond.gov.uk?subject=Fulwell%20Park%20Avenue%20Surface%20Material%20Change&body=Dear%20Councillor%2C%0A%0AI%20am%20a%20local%20resident%20seeking%20clarification%20regarding%20the%20proposed%20replacement%20of%20the%20exposed%20aggregate%20concrete%20surface%20on%20Fulwell%20Park%20Avenue.%0A%0ACould%20you%20please%20clarify%3A%0A%0A%E2%80%A2%20When%20ward%20members%20were%20first%20notified%20of%20this%20scheme%0A%E2%80%A2%20Whether%20residents%20were%20consulted%20prior%20to%20the%20decision%0A%E2%80%A2%20What%20condition%20assessment%20determined%20that%20full%20resurfacing%20is%20required%0A%0AGiven%20that%20works%20are%20scheduled%20to%20begin%20shortly%2C%20I%20would%20appreciate%20any%20information%20regarding%20the%20decision-making%20process%20prior%20to%20commencement.%0A%0AKind%20regards" aria-label="Email all West Twickenham ward councillors regarding Fulwell Park Avenue surface change">Email Your Councillors</a>
       <p class="guidance-text">A brief message asking when councillors were notified and whether residents were consulted is sufficient.</p>
@@ -195,8 +162,6 @@
   <section id="surface">
     <h2>Current Surface</h2>
     <p>The existing carriageway consists of an exposed aggregate concrete surface which has formed the established road finish for several decades, without issues such as significant potholes.</p>
-
-    <!-- Video moved here from site-video section -->
     <div class="surface-video">
       <video autoplay muted controls playsinline preload="metadata" poster="FulwellParkAve_Surface1.JPG">
         <source src="fulwell-roll-final.mp4" type="video/mp4">
@@ -211,7 +176,7 @@
     <p>The following notice was received by residents, dated 20 February 2026, advising of the proposed highway works.</p>
     <div class="notice-stack">
       <iframe src="Fulwell-Park-Avenue-Council-Notice-20-Feb-2026.pdf" width="100%" height="900" loading="lazy" style="border:0;"></iframe>
-      <p class="notice-caption">Council Notice – dated 20 February 2026 (PDF version)</p>
+      <p class="notice-caption">Council Notice &#8211; dated 20 February 2026 (PDF version)</p>
       <p class="btn-note">If the document does not display, <a href="Fulwell-Park-Avenue-Council-Notice-20-Feb-2026.pdf" target="_blank" rel="noopener noreferrer">click here to download the PDF.</a></p>
     </div>
   </section>
@@ -243,23 +208,7 @@
   <!-- ── 6. SITE VIDEO ──────────────────────────────────────── -->
   <section id="site-video">
     <h2>Video of Existing Surface Condition</h2>
-    <p class="btn-note" style="margin-bottom:0;">Short site recording taken prior to scheduled resurfacing works.</p>
-
-    <!-- Photos moved here from Current Surface section -->
-    <div class="photo-grid">
-      <figure>
-        <img src="FulwellParkAve_Surface1.JPG" alt="Exposed aggregate concrete surface on Fulwell Park Avenue showing textured road finish" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
-        <figcaption>Existing surface — exposed aggregate concrete</figcaption>
-      </figure>
-      <figure>
-        <img src="FulwellParkAve_Surface2.JPG" alt="Fulwell Park Avenue road surface with white road markings on aggregate concrete" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
-        <figcaption>Surface with road markings</figcaption>
-      </figure>
-      <figure>
-        <img src="FulwellParkAve_Surface3.JPG" alt="Close-up macro photograph of the exposed aggregate concrete road surface texture" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
-        <figcaption>Close-up of aggregate surface texture</figcaption>
-      </figure>
-    </div>
+    <p class="btn-note">Short site recording taken prior to scheduled resurfacing works.</p>
   </section>
 
   <!-- ── 7. CONTACT YOUR WARD COUNCILLORS ───────────────────── -->
@@ -281,7 +230,7 @@
       </li>
     </ul>
     <a class="btn-email" href="mailto:cllr.p.allen@richmond.gov.uk,cllr.a.juriansz@richmond.gov.uk,cllr.l.obrien@richmond.gov.uk?subject=Fulwell%20Park%20Avenue%20Surface%20Material%20Change&body=Dear%20Councillor%2C%0A%0AI%20am%20a%20local%20resident%20seeking%20clarification%20regarding%20the%20proposed%20replacement%20of%20the%20exposed%20aggregate%20concrete%20surface%20on%20Fulwell%20Park%20Avenue.%0A%0ACould%20you%20please%20clarify%3A%0A%0A%E2%80%A2%20When%20ward%20members%20were%20first%20notified%20of%20this%20scheme%0A%E2%80%A2%20Whether%20residents%20were%20consulted%20prior%20to%20the%20decision%0A%E2%80%A2%20What%20condition%20assessment%20determined%20that%20full%20resurfacing%20is%20required%0A%0AGiven%20that%20works%20are%20scheduled%20to%20begin%20shortly%2C%20I%20would%20appreciate%20any%20information%20regarding%20the%20decision-making%20process%20prior%20to%20commencement.%0A%0AKind%20regards" aria-label="Email all West Twickenham ward councillors regarding Fulwell Park Avenue surface change">Email Your Councillors</a>
-    <p class="btn-note">Opens your email client with the councillors’ addresses and a pre-written message which you may edit before sending.<br>Residents are encouraged to contact councillors individually as well as collectively.</p>
+    <p class="btn-note">Opens your email client with the councillors&#8217; addresses and a pre-written message which you may edit before sending.<br>Residents are encouraged to contact councillors individually as well as collectively.</p>
     <h3>Suggested Questions</h3>
     <ul class="question-list">
       <li>When were ward members notified of this scheme?</li>
@@ -290,7 +239,7 @@
     </ul>
   </section>
 
-  <!-- ── EMAIL TEMPLATE ───────────────────────────────────── -->
+  <!-- ── 8. EMAIL TEMPLATE ──────────────────────────────────── -->
   <section id="email-template">
     <h2>Email Template</h2>
     <p>Some residents have asked what to write when contacting councillors. The following template can be copied and edited if helpful.</p>
@@ -315,7 +264,7 @@ Kind regards
     <p class="btn-note">Providing a starter template often helps residents contact councillors more easily, as it removes uncertainty about what to write.</p>
   </section>
 
-  <!-- ── SURFACE MATERIAL INFORMATION ─────────────────────── -->
+  <!-- ── 9. SURFACE MATERIAL INFORMATION ───────────────────── -->
   <section id="surface-information">
     <h2>Surface Material Information</h2>
     <p>Exposed aggregate concrete is a paving technique where the top layer of cement paste is removed to reveal the underlying stones (aggregate). This method is commonly used in driveways, pathways, and public road surfaces.</p>
@@ -353,9 +302,38 @@ Kind regards
     </table>
 
     <p class="btn-note">Sources: Google search summaries and general descriptions of exposed aggregate concrete and road construction terminology (including Wikipedia references).</p>
+
+    <!-- Photos moved here from site-video section (Steps 1–3) -->
+    <p class="btn-note">Examples of the existing exposed aggregate concrete surface currently present on Fulwell Park Avenue.</p>
+    <div class="photo-grid">
+      <figure>
+        <img src="FulwellParkAve_Surface1.JPG" alt="Exposed aggregate concrete surface on Fulwell Park Avenue showing textured road finish" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Existing surface &#8212; exposed aggregate concrete</figcaption>
+      </figure>
+      <figure>
+        <img src="FulwellParkAve_Surface2.JPG" alt="Fulwell Park Avenue road surface with white road markings on aggregate concrete" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Surface with road markings</figcaption>
+      </figure>
+      <figure>
+        <img src="FulwellParkAve_Surface3.JPG" alt="Close-up macro photograph of the exposed aggregate concrete road surface texture" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
+        <figcaption>Close-up of aggregate surface texture</figcaption>
+      </figure>
+    </div>
+
+    <!-- Questions subsection (Steps 5–6) -->
+    <h3 id="replacement-questions">Questions Regarding the Proposed Replacement</h3>
+    <p>Based on the information currently available, some residents have raised questions regarding the assessment process and the rationale for replacing the existing exposed aggregate concrete surface.</p>
+    <ul class="clarification-list">
+      <li>Whether a lifecycle assessment was undertaken comparing the expected lifespan of the existing exposed aggregate surface with a replacement asphalt surface.</li>
+      <li>Whether the existing surface was assessed for repair options before full resurfacing was proposed.</li>
+      <li>Whether the interaction between roadside tree roots and different surface materials was considered.</li>
+      <li>Whether resurfacing will alter drainage behaviour or water runoff patterns on the street.</li>
+      <li>Whether residents were consulted prior to the decision to replace the long-established surface.</li>
+    </ul>
+    <p class="btn-note">These questions are presented to help clarify the technical basis and consultation process associated with the proposed works.</p>
   </section>
 
-  <!-- ── 8. KEY DOCUMENTS ───────────────────────────────────── -->
+  <!-- ── 10. KEY DOCUMENTS ──────────────────────────────────── -->
   <section id="documents">
     <h2>Key Documents</h2>
     <ul class="doc-list">
