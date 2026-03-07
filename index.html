@@ -32,7 +32,10 @@
   .masthead { border-bottom: 2px solid var(--black); padding-bottom: 20px; margin-bottom: 36px; }
   .masthead .location-tag { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
   h1 { font-family: var(--font-body); font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 700; line-height: 1.2; color: var(--black); letter-spacing: -0.01em; }
+  .masthead .briefing-tag { font-family: var(--font-ui); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); margin-top: 8px; }
   .masthead .date-notice { font-family: var(--font-ui); font-size: 0.8rem; color: var(--mid); margin-top: 10px; }
+  .latest-update-bar { font-family: var(--font-ui); font-size: 0.82rem; font-weight: 600; color: var(--black); background: var(--bg-tint); border-left: 3px solid var(--black); padding: 10px 14px; margin-top: 16px; line-height: 1.6; }
+  .latest-update-bar span { font-weight: 400; color: var(--mid); }
 
   section { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--rule); }
   section:last-of-type { border-bottom: none; }
@@ -71,6 +74,10 @@
   .form-embed { margin-top: 20px; }
   .form-embed iframe { width: 100%; border: 1px solid var(--rule); background: #ffffff; }
 
+  .poll-screenshot { margin-top: 16px; }
+  .poll-screenshot img { width: 100%; border: 1px solid var(--rule); display: block; }
+  .poll-date-label { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600; color: var(--mid); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; margin-top: 20px; }
+
   .councillor-list { list-style: none; padding: 0; margin: 0 0 24px; }
   .councillor-list li { padding: 12px 0; border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; }
   .councillor-list li:first-child { border-top: 1px solid var(--rule); }
@@ -97,7 +104,22 @@
   .doc-list a:hover { text-decoration-color: var(--black); }
   .doc-list .pending { font-family: var(--font-ui); font-size: 0.9rem; color: var(--light); font-style: italic; }
 
+  /* ── RESPONSE BOX ────────────────────────────────────────── */
+  .response-box { background: var(--bg-tint); border-left: 3px solid var(--black); padding: 20px 24px; margin-top: 16px; }
+  .response-meta { font-family: var(--font-ui); font-size: 0.75rem; color: var(--mid); margin-bottom: 16px; letter-spacing: 0.03em; }
+  .response-box p { font-size: 0.97rem; line-height: 1.65; margin-bottom: 12px; }
+  .response-box p:last-child { margin-bottom: 0; }
+  .response-box blockquote { border-left: 2px solid var(--rule); margin: 12px 0; padding: 2px 0 2px 16px; font-style: italic; color: var(--mid); font-size: 0.95rem; line-height: 1.65; }
+
+  /* ── FOI LIST ────────────────────────────────────────────── */
+  .foi-list { list-style: none; padding: 0; margin: 0 0 16px; }
+  .foi-list li { padding: 10px 0 10px 20px; border-bottom: 1px solid var(--rule); position: relative; font-size: 0.97rem; color: var(--dark); line-height: 1.55; }
+  .foi-list li:first-child { border-top: 1px solid var(--rule); }
+  .foi-list li::before { content: '–'; position: absolute; left: 0; color: var(--mid); }
+
   footer { margin-top: 48px; padding-top: 24px; border-top: 2px solid var(--black); font-family: var(--font-ui); font-size: 0.78rem; color: var(--mid); line-height: 1.6; }
+  footer p { margin-bottom: 8px; }
+  footer p:last-child { margin-bottom: 0; }
   footer strong { color: var(--dark); font-weight: 600; }
 
   @media (max-width: 480px) {
@@ -121,14 +143,24 @@
   <header class="masthead">
     <p class="location-tag">London Borough of Richmond upon Thames &nbsp;·&nbsp; West Twickenham Ward</p>
     <h1>Fulwell Park Avenue<br>Surface Material Change 2026</h1>
+    <p class="briefing-tag">Resident Information Briefing</p>
     <p class="date-notice">Council notice dated 20 February 2026 &nbsp;·&nbsp; Works scheduled from 10 March 2026</p>
+    <p class="latest-update-bar">Latest Update &#8211; 8 March 2026 &nbsp;<span>Formal complaint submitted and additional Freedom of Information clarification request sent.</span></p>
+    <div class="latest-update-bar" style="margin-top:12px;">
+      <strong>Key Facts</strong><br>
+      Location: Fulwell Park Avenue, West Twickenham<br>
+      Current surface: Exposed aggregate concrete<br>
+      Proposed works: Replacement with asphalt (tarmac)<br>
+      Council notice issued: 20 February 2026<br>
+      Scheduled start date: 10 March 2026
+    </div>
   </header>
 
-  <!-- ── TRANSPARENCY NOTICE ───────────────────────────────── -->
-  <section id="transparency-notice">
-    <p>Residents have contacted their West Twickenham ward councillors seeking clarification regarding the proposed resurfacing works.</p>
-    <p>Questions raised relate to the condition assessment used to prioritise Fulwell Park Avenue within the 2025/26 Highway Maintenance Programme.</p>
-    <p>Any responses or clarifications received will be reflected on this page so residents can access the most accurate information available.</p>
+  <!-- ── DOCUMENT STATUS ───────────────────────────────────── -->
+  <section id="document-status">
+    <h2>Document Status</h2>
+    <p>This page consolidates publicly available information relating to the proposed resurfacing of Fulwell Park Avenue.</p>
+    <p>It is maintained by local residents to document the timeline of events, relevant council documentation, and correspondence with elected representatives.</p>
   </section>
 
   <!-- ── QUICK CONTACT ─────────────────────────────────────── -->
@@ -146,7 +178,13 @@
     <ul class="clarification-list">
       <li><strong>7 April 2025</strong> — Transport and Air Quality Committee approves the 2025/26 Highway Maintenance Programme.</li>
       <li><strong>20 February 2026</strong> — Council notice issued advising of proposed resurfacing works.</li>
+      <li><strong>20 February 2026</strong> — Freedom of Information request submitted seeking inspection data, SCANNER survey results and engineering assessments used to prioritise the resurfacing scheme.</li>
       <li><strong>Late February 2026</strong> — Residents begin receiving the notice regarding the planned surface replacement.</li>
+      <li><strong>27 February 2026</strong> — Resident correspondence sent to ward councillors requesting clarification of governance and consultation process.</li>
+      <li><strong>27 February 2026</strong> — Follow-up Freedom of Information request submitted.</li>
+      <li><strong>7 March 2026</strong> — Ward councillor responds confirming Fulwell Park Avenue reached the top of the borough&#8217;s maintenance prioritisation list and that technical information has been requested from officers.</li>
+      <li><strong>7 March 2026</strong> — Supplementary Freedom of Information clarification submitted requesting additional inspection data.</li>
+      <li><strong>8 March 2026</strong> — Formal complaint submitted requesting clarification of technical assessment.</li>
       <li><strong>10 March 2026</strong> — Scheduled commencement date for resurfacing works.</li>
     </ul>
     <p class="btn-note">This timeline summarises publicly available information regarding the proposed works.</p>
@@ -156,11 +194,13 @@
   <section id="contents">
     <h2>Page Overview</h2>
     <ul class="doc-list">
-      <li><a href="#timeline">Timeline of Events (Feb&#8211;Mar 2026)</a></li>
+      <li><a href="#timeline">Timeline of Events (Apr 2025&#8211;Mar 2026)</a></li>
       <li><a href="#summary">What Is Happening &#8212; Proposed road surface replacement</a></li>
       <li><a href="#surface">Current Surface &#8212; Existing exposed aggregate concrete</a></li>
       <li><a href="#council-notice">Council Notice &#8212; February 2026 works notice</a></li>
-      <li><a href="#clarification">Points Requiring Clarification</a></li>
+      <li><a href="#councillor-response">Councillor Response &#8212; 7 March 2026</a></li>
+      <li><a href="#foi">Freedom of Information Requests</a></li>
+      <li><a href="#clarification">Outstanding Questions</a></li>
       <li><a href="#resident-poll">Resident Poll &#8212; Consultation check</a></li>
       <li><a href="#contact">Contact Your Ward Councillors</a></li>
       <li><a href="#email-template">Email Template</a></li>
@@ -170,6 +210,7 @@
       <li><a href="#committee-decision">Committee Decision Reference &#8212; April 2025 council minutes</a></li>
       <li><a href="#documents">Key Documents &#8212; Council notice and highway maintenance programme</a></li>
       <li><a href="#correspondence">Public Record of Correspondence</a></li>
+      <li><a href="#sources">Sources and References</a></li>
     </ul>
   </section>
 
@@ -179,7 +220,7 @@
     <div class="summary-box">
       <p>Fulwell Park Avenue&#8217;s exposed aggregate concrete surface is scheduled to be replaced with tarmac from 10 March 2026.</p>
       <p>The council notice describes the scheme as &#8220;highway maintenance works&#8221; and as &#8220;road surface improvement works,&#8221; stating that &#8220;this upgrade&#8221; will replace the existing concrete finish with tarmac.</p>
-      <p>Residents are seeking clarification regarding consultation, assessment and the decision-making process prior to commencement of works.</p>
+      <p>Residents have requested clarification regarding the condition assessment supporting the resurfacing decision, as well as the consultation and decision-making process prior to commencement of works.</p>
     </div>
     <div class="conversion-block">
       <h3>Email Your Councillors</h3>
@@ -199,7 +240,7 @@
         Your browser does not support the video tag.
       </video>
     </div>
-    <p class="btn-note">This road has served the community for decades. Residents are asking why it must now be replaced.</p>
+    <p class="btn-note">Residents have requested clarification regarding the engineering assessment used to determine that full resurfacing is required.</p>
   </section>
 
   <!-- ── 3. COUNCIL NOTICE ──────────────────────────────────── -->
@@ -213,10 +254,42 @@
     </div>
   </section>
 
-  <!-- ── 4. POINTS REQUIRING CLARIFICATION ─────────────────── -->
+  <!-- ── COUNCILLOR RESPONSE ───────────────────────────────── -->
+  <section id="councillor-response">
+    <h2>Councillor Response</h2>
+    <h3>Response from Cllr Alan Juriansz &#8211; 7 March 2026</h3>
+    <p>The following is a record of the response received from ward councillor Cllr Alan Juriansz in reply to resident correspondence dated 27 February 2026. The response is documented here so that residents can see the information provided to date.</p>
+    <div class="response-box">
+      <p class="response-meta">From: Cllr Alan Juriansz, West Twickenham Ward &nbsp;·&nbsp; Received 7 March 2026</p>
+      <p>Cllr Juriansz provided the following covering note:</p>
+      <blockquote>&#8220;Thank you for your email. I have responded to your questions below in red. I will respond further when I have heard from officers.&#8221;</blockquote>
+      <p>In response to the question regarding the date on which ward members were consulted or notified of this scheme:</p>
+      <blockquote>&#8220;All roads in the borough under the control of the council are subject to condition evaluation and this determines where they are on the list for maintenance and resurfacing. Fulwell Park Avenue reached the top of this list in our ward and therefore became eligible for resurfacing, we were made aware of this a few months ago.&#8221;</blockquote>
+      <p>In response to the question regarding when residents were canvassed and by what method:</p>
+      <blockquote>&#8220;Over many years we regularly carry out door to door canvassing and the poor condition of the road surface has come up many times.&#8221;</blockquote>
+      <p>In response to the question regarding any assessment of interaction between tree roots and the proposed surface material:</p>
+      <blockquote>&#8220;I have asked our officers for this technical information and will get back to you as soon as possible.&#8221;</blockquote>
+    </div>
+    <p class="btn-note">This section will be updated when further information is received from the councillor or from council officers.</p>
+  </section>
+
+  <!-- ── FREEDOM OF INFORMATION REQUESTS ──────────────────── -->
+  <section id="foi">
+    <h2>Freedom of Information Requests</h2>
+    <p>Freedom of Information requests have been submitted to the London Borough of Richmond upon Thames seeking documentation relating to the decision to resurface Fulwell Park Avenue. These requests were submitted under the Freedom of Information Act 2000.</p>
+    <ul class="foi-list">
+      <li><strong>20 February 2026</strong> — Initial FOI request submitted.</li>
+      <li><strong>27 February 2026</strong> — Follow-up FOI request submitted.</li>
+      <li><strong>7 March 2026</strong> — Additional clarification submitted.</li>
+    </ul>
+    <p>The requests seek inspection data, SCANNER survey results and engineering assessments used to prioritise Fulwell Park Avenue within the 2025/26 Highway Maintenance Programme resurfacing scheme.</p>
+    <p class="btn-note">Responses received under the Freedom of Information Act 2000 will be published on this page.</p>
+  </section>
+
+  <!-- ── 4. OUTSTANDING QUESTIONS ──────────────────────────── -->
   <section id="clarification">
-    <h2>Points Requiring Clarification</h2>
-    <p>The following questions have been raised by residents and have not yet received a response from the council or ward members.</p>
+    <h2>Outstanding Questions</h2>
+    <p>The following questions have been raised by residents and have not yet received a full response from the council or ward members.</p>
     <ul class="clarification-list">
       <li>When ward councillors were notified of this scheme</li>
       <li>Whether residents were consulted regarding replacement of the long-established surface with an alternative material</li>
@@ -238,6 +311,12 @@
     </div>
     <p class="btn-note">This poll is administered via Google Forms. Responses are anonymous unless you choose to provide identifying information.</p>
     <p class="btn-note">Results will be shared with ward councillors.</p>
+    <h3>Poll Results Summary</h3>
+    <p>Flyers inviting residents to participate in the poll were distributed to approximately 160 households on Fulwell Park Avenue out of an estimated total of around 250 properties. At the time of writing nine residents have responded, and all respondents reported that the notice dated 20 February 2026 was the first communication they had received regarding the proposed works.</p>
+    <p class="poll-date-label">Poll results as at 7 March 2026</p>
+    <div class="poll-screenshot">
+      <img src="pollresults7thMarch2026.png" alt="Google Forms poll results as at 7 March 2026 showing 9 responses, 100% of respondents answered No to having received prior consultation" loading="lazy">
+    </div>
   </section>
 
   <!-- ── 6. CONTACT YOUR WARD COUNCILLORS ───────────────────── -->
@@ -298,6 +377,7 @@ Kind regards
     <h2>Surface Material Information</h2>
     <p>Exposed aggregate concrete is a paving technique where the top layer of cement paste is removed to reveal the underlying stones (aggregate). This method is commonly used in driveways, pathways, and public road surfaces.</p>
     <p>The technique involves pouring concrete and, while curing, either applying a surface retarder or washing away the top 2&#8211;6mm of cement paste to expose the decorative stone layer beneath.</p>
+    <p>The proposed works involve replacing the existing exposed aggregate concrete surface with asphalt, representing a change in surface material rather than a repair to the existing exposed aggregate surface.</p>
 
     <table class="comparison-table">
       <thead>
@@ -419,8 +499,8 @@ Kind regards
     <p>Section 53 of the Transport and Air Quality Committee minutes dated 7 April 2025 references approval of the 2025/26 highway maintenance programme.</p>
     <p>Fulwell Park Avenue is listed in Appendix 1A of the London Borough of Richmond upon Thames Highway Maintenance Programme 2025/26, which was approved by the Transport and Air Quality Committee on 7 April 2025.</p>
     <p>The programme lists Fulwell Park Avenue &#8211; Entire Road &#8211; West Twickenham as a proposed carriageway resurfacing scheme.</p>
-    <p>The appendix identifies roads scheduled for resurfacing but does not specify the surface material to be used.</p>
-    <p>The committee minutes also indicate that resurfacing programmes are informed by engineering inspections and asset condition data used to prioritise roads across the borough.</p>
+    <p>The appendix identifies roads scheduled for resurfacing but does not specify the surface material to be used for individual schemes.</p>
+    <p>Committee documentation indicates that resurfacing programmes are informed by engineering inspection data and asset condition assessments used to prioritise roads across the borough.</p>
     <p>Residents have therefore requested clarification regarding the condition assessment or inspection data used to prioritise Fulwell Park Avenue for resurfacing within the programme.</p>
     <h3>Document Trail</h3>
     <ul class="clarification-list">
@@ -454,15 +534,30 @@ Kind regards
   <section id="correspondence">
     <h2>Public Record of Correspondence</h2>
     <p>Residents have contacted West Twickenham ward councillors seeking clarification regarding the proposed resurfacing works on Fulwell Park Avenue.</p>
-    <p>Emails were sent to the three ward councillors requesting information regarding consultation, condition assessments, and the decision-making process relating to the proposed surface replacement.</p>
+    <p>Emails were sent to the three ward councillors on 27 February 2026 requesting information regarding consultation, condition assessments, and the decision-making process relating to the proposed surface replacement.</p>
+    <p>A response was received from Cllr Alan Juriansz on 7 March 2026. The content of that response is documented in the Councillor Response section above.</p>
     <p>This section is included to maintain transparency regarding communication between residents and elected representatives.</p>
-    <p>If responses or clarifications are received they will be reflected on this page so residents can access the most accurate information available.</p>
+    <p>If further responses or clarifications are received they will be reflected on this page so residents can access the most accurate information available.</p>
+  </section>
+
+  <!-- ── 15. SOURCES AND REFERENCES ────────────────────────── -->
+  <section id="sources">
+    <h2>Sources and References</h2>
+    <p>The information presented on this page is based on publicly available council documentation and resident correspondence.</p>
+    <ul class="clarification-list">
+      <li>London Borough of Richmond upon Thames &#8211; Transport and Air Quality Committee Minutes (7 April 2025)</li>
+      <li>Highway Maintenance Programme 2025&#8211;2026 &#8211; Appendix 1A</li>
+      <li>Council Notice &#8211; Fulwell Park Avenue Highway Maintenance Works (20 February 2026)</li>
+      <li>Resident correspondence with West Twickenham ward councillors dated 27 February 2026</li>
+      <li>Freedom of Information requests submitted under the Freedom of Information Act 2000</li>
+    </ul>
   </section>
 
   <footer>
     <p><strong>Fulwell Park Avenue &#8211; Surface Material Change 2026</strong></p>
-    <p>This page has been produced by local residents to consolidate publicly available information and facilitate contact with ward councillors. It is not affiliated with the London Borough of Richmond upon Thames or any political organisation.</p>
-    <p>Last updated: 4 March 2026</p>
+    <p>This page has been prepared to document publicly available information and resident correspondence relating to the proposed resurfacing works. If any information on this page is inaccurate or incomplete, it will be updated when clarification is received.</p>
+    <p>This page has been prepared to provide residents with a consolidated record of publicly available information relating to the proposed resurfacing works. It is not affiliated with the London Borough of Richmond upon Thames or any political organisation.</p>
+    <p>Last updated: 8 March 2026</p>
   </footer>
 
 </div>
